@@ -3,6 +3,8 @@
 ## M3 - Group Assignment 1
 **Deadline:** Monday, 10th Feb at 12:00  
 
+---
+
 ## Project Overview  
 This notebook explores **feature engineering, data preprocessing, and neural network modeling** using **PyTorch** to predict house prices. The dataset used contains various housing attributes, including **size, number of rooms, location, and quality ratings**.  
 
