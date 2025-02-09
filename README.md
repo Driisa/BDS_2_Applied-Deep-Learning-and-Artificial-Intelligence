@@ -1,34 +1,83 @@
 # Portfolio Assignment 1
 
 ## M3 - Group Assignment 1
-**Deadline:** Monday, 10th Feb at 12:00
+**Deadline:** Monday, 10th Feb at 12:00  
 
-## Introduction
-In this assignment, you will deepen your understanding of feature engineering, data preprocessing, and neural network modeling using PyTorch. While using the house pricing dataset.
+## Project Overview  
+This notebook explores **feature engineering, data preprocessing, and neural network modeling** using **PyTorch** to predict house prices. The dataset used contains various housing attributes, including **size, number of rooms, location, and quality ratings**.  
 
-The goal is to build a neural network that can handle **Cross-sectional data** (i.e., data without a time component; a single “snapshot” of many observations). In this case, you will use an **MLP (Multi-Layer Perceptron)**.
+The goal of this assignment is to build a **Multi-Layer Perceptron (MLP)** model to predict house prices based on features.  
 
-## Primary Objectives
-- Preprocess and engineer features.
-- Build, train, and evaluate the neural network architecture in PyTorch:
-  - **MLP** because it is cross-sectional data.
-- Experiment with hyperparameters, including:
-  - Number of layers/neurons
-  - Activation functions
-  - Learning rates
-  - Epochs
-  - Batch size
-  - Optimizers
-- Evaluate and discuss results using appropriate performance metrics.
+## Summary of Work Done  
+### **1. Data Preprocessing & Feature Engineering**
+- **Data Loading:** The dataset was imported and examined for missing values.  
+- **Feature Selection:** Key features that influence house prices were identified, such as:
+  - **sqft_living** (size of the living space)
+  - **grade** (quality of the house)
+  - **bathrooms** (number of bathrooms)
+  - **lat** (location coordinates)
+  - **waterfront** (whether the house is near water)
+- **Feature Engineering:** A new feature **house_age** was created based on `yr_built` and `yr_renovated`.
+- **Data Encoding:**  
+  - Categorical features (e.g., **waterfront** and **condition**) were converted to numerical values.
+- **Scaling:**  
+  - Standardization was applied to numerical features using `StandardScaler`.
 
-## Prerequisites
-Ensure you have the following installed before running the notebook:
-- Python 3.x
-- Jupyter Notebook or Jupyter Lab
-- PyTorch
-- Additional libraries listed in `requirements.txt`
+### **2. Model Development**
+- **Neural Network Architecture:**  
+  - A **Feedforward MLP** was built using PyTorch with:
+    - **3 hidden layers**: (128, 64, 32) neurons.
+    - **ReLU activation functions** in hidden layers.
+    - **Dropout regularization** (0.3) to prevent overfitting.
+    - **Adam optimizer** with **learning rate 0.001**.
+- **Training Strategy:**
+  - **Loss function:** Mean Squared Error (MSE).
+  - **Early Stopping:** Monitored validation loss to prevent overtraining.
 
-## Installation
+### **3. Model Training & Hyperparameter Tuning**
+- **Training the MLP model on the processed dataset** using **2000 epochs** (with early stopping).  
+- **Hyperparameter tuning experiments** included variations in:
+  - Number of hidden layers and neurons.
+  - Learning rate adjustments.
+  - Dropout rates.
+
+### **4. Model Evaluation**
+- **Performance Metrics Computed:**
+  - **Root Mean Squared Error (RMSE)**: Measures prediction accuracy.
+  - **Mean Absolute Error (MAE)**: Measures absolute prediction errors.
+  - **R² Score**: Measures how well the model explains variability in house prices.
+- **Visualizations:**
+  - **Predicted vs. Actual House Prices** (Scatter plot).
+  - **Residual Analysis** (Distribution of prediction errors).
+  - **Training Loss Curve** (Tracking learning over epochs).
+
+### **5. Key Findings**
+- **Best Performing Model Configuration:**
+  - **Hidden Layers:** (128, 64, 32)
+  - **Dropout Rate:** 0.3
+  - **Optimizer:** Adam (LR = 0.001)
+  - **Early Stopping:** Patience = 100 epochs
+- **Final Model Performance:**
+  - **Training RMSE:** ~159,707
+  - **Test RMSE:** ~183,314
+  - **Training R²:** ~0.8048
+  - **Test R²:** ~0.7852
+- **Model Generalization:**
+  - Good but slight overfitting observed (train RMSE < test RMSE).
+  - Higher dropout rates impacted performance negatively.
+  - Feature scaling significantly improved model stability.
+
+---
+
+## **How to Run the Notebook**
+### **Prerequisites**
+Ensure you have the following installed:
+- Python 3.x  
+- Jupyter Notebook or Jupyter Lab  
+- PyTorch  
+- Other dependencies listed in `requirements.txt`  
+
+### **Installation**
 1. Clone this repository or download the notebook file:
 ```sh
 git clone <repository_url>
@@ -39,59 +88,21 @@ cd <repository_folder>
 pip install -r requirements.txt
 ```
 
-## Running the Notebook
+### **Run the Notebook**
 1. Open Jupyter Notebook:
 ```sh
 jupyter notebook
 ```
 2. Navigate to the directory and open `Assignment_1.ipynb`.
-3. Run the notebook cells sequentially to execute the code.
+3. Run all cells sequentially to preprocess data, train the model, and evaluate performance.
 
-## Data Preprocessing & Feature Engineering
-The dataset should be loaded and preprocessed, including:
-- Handling missing values
-- Encoding categorical variables
-- Normalization or standardization
-- Feature engineering (e.g., creating new features like `house_age`)
+---
 
-## Model Training
-1. **Define Neural Network Architecture**
-   - **MLP for Cross-sectional Data**
-2. **Train the Model**:
-   - Define loss function.
-   - Choose an optimizer.
-   - Implement early stopping and learning rate scheduling.
-3. **Hyperparameter Tuning**:
-   - Test different configurations.
-   - Compare validation performance across different hyperparameter sets.
+## **Future Improvements**
+- **Experiment with Batch Normalization:** To improve training stability.  
+- **Try Alternative Models:** May provide better performance.  
+- **Explore SHAP Values:** For better explainability of feature importance.  
 
-## Model Evaluation
-- Compute key metrics such as RMSE, MAE, and R² score.
-- Visualize actual vs. predicted values.
-- Perform residual analysis.
-- Interpret results and discuss improvements.
+---
 
-## Results & Insights
-- **Best Model and Hyperparameters:**
-  - Hidden Layers: (128, 64, 32)
-  - Dropout Rate: 0.3
-  - Optimizer: Adam (LR = 0.001)
-  - Loss Function: MSE
-  - Early Stopping: Patience = 100
-- **Final Performance:**
-  - Train RMSE: ~159,707 | Test RMSE: ~183,314
-  - Train R²: ~0.8048 | Test R²: ~0.7852
-- **Key Insights:**
-  - Feature selection and scaling significantly impact model performance.
-  - Dropout regularization prevents overfitting.
-  - Higher hidden units risk overfitting, while smaller models underperform.
-
-## Limitations & Future Improvements
-- Experiment with batch handling for improved efficiency.
-- Explore alternative models beyond MLP for tabular data.
-- Enhance feature engineering by creating new predictive variables.
-- Implement SHAP values for better feature importance interpretation.
-
-## License
-[Specify license type if required]
-
+Happy coding and exploring! 🚀
