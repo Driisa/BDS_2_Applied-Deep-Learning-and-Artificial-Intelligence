@@ -4,17 +4,14 @@
 **Deadline:** Monday, 10th Feb at 12:00
 
 ## Introduction
-In this assignment, you will deepen your understanding of feature engineering, data preprocessing, and neural network modeling using PyTorch. While we suggest using a house pricing dataset for illustrative purposes, you are free to choose any dataset of interest.
+In this assignment, you will deepen your understanding of feature engineering, data preprocessing, and neural network modeling using PyTorch. While using the house pricing dataset.
 
-Your goal is to build a neural network that can handle either:
-- **Cross-sectional data** (i.e., data without a time component; a single “snapshot” of many observations). In this case, you will use an **MLP (Multi-Layer Perceptron)**.
-- **Time-series data** (i.e., data with a temporal or sequential component). In this case, you will use an **RNN (Recurrent Neural Network)** variant (e.g., simple RNN, LSTM) to capture temporal relationships.
+The goal is to build a neural network that can handle **Cross-sectional data** (i.e., data without a time component; a single “snapshot” of many observations). In this case, you will use an **MLP (Multi-Layer Perceptron)**.
 
 ## Primary Objectives
-- Preprocess and engineer features from your chosen dataset.
-- Build, train, and evaluate at least one neural network architecture in PyTorch:
-  - **MLP** if you have cross-sectional data.
-  - **RNN** if you have time-series/sequential data.
+- Preprocess and engineer features.
+- Build, train, and evaluate the neural network architecture in PyTorch:
+  - **MLP** because it is cross-sectional data.
 - Experiment with hyperparameters, including:
   - Number of layers/neurons
   - Activation functions
@@ -59,14 +56,13 @@ The dataset should be loaded and preprocessed, including:
 
 ## Model Training
 1. **Define Neural Network Architecture**
-   - **MLP for Cross-sectional Data**: At least two hidden layers, activation functions (ReLU, Sigmoid, etc.), and dropout/batch normalization.
-   - **RNN for Time-Series Data**: Variants like LSTM, GRU, or simple RNN.
+   - **MLP for Cross-sectional Data**
 2. **Train the Model**:
-   - Define loss function (e.g., MSE for regression, CrossEntropy for classification).
-   - Choose an optimizer (e.g., Adam, SGD).
+   - Define loss function.
+   - Choose an optimizer.
    - Implement early stopping and learning rate scheduling.
 3. **Hyperparameter Tuning**:
-   - Test different configurations for hidden layers, learning rate, and dropout rate.
+   - Test different configurations.
    - Compare validation performance across different hyperparameter sets.
 
 ## Model Evaluation
