@@ -1,0 +1,10 @@
+datasets
+google
+huggingface_hub
+matplotlib
+numpy
+pandas
+scikit-learn
+seaborn
+torch
+transformers
