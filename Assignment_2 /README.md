@@ -97,10 +97,38 @@ Open `Assignment_2_Binary.ipynb` or `Assignment_2_Multi-class.ipynb` to run trai
 
 ---
 
-## Group Members & Contributions
-- **Daniel S. Riisager** - Binary Classification Model Development
-- **Vittorio, Oliver, Daniel** - Multi-Class Classification Model Development
-- **Daniel S. Riisager** - Deployment & Documentation
-- **Daniel S. Riisager** - Technical Explainer Video
+## Streamlit Application
+
+### Running the Streamlit App
+
+To run the Streamlit-based text classification application, use the following commands:
+```bash
+streamlit run streamlit_app.py
+```
+
+### `streamlit_app.py`
+```python
+import streamlit as st
+from transformers import pipeline
+
+# Load Hugging Face text classification pipeline
+@st.cache_resource  # Cache the model to avoid reloading it on every refresh
+def load_classification_pipeline():
+    classifier = pipeline("text-classification", model="Driisa/finbert-finetuned-github")
+    return classifier
+
+...
+
+```
 
 ---
+
+## Group Members & Contributions
+- **Daniel** - Binary Classification Model Development
+- **Vittorio, Oliver, Daniel** - Multi-Class Classification Model Development
+- **Daniel** - Deployment & Documentation
+- **Vittorio** - Streamlit app
+- **Daniel** - Technical Explainer Video
+
+---
+
