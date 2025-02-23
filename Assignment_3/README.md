@@ -7,6 +7,7 @@ AI News Extractor is a Python-based project that utilizes **CrewAI** to extract,
 - **News Extraction:** Fetches news articles using APIs.
 - **Sentiment Analysis:** Analyzes the sentiment of extracted articles.
 - **Summarization:** Condenses news content into key points.
+- **Quality classification** Ensure the quality of the content.
 - **CrewAI Integration:** Implements AI agents for modular workflow.
 - **Streamlit UI:** Provides an interactive web-based UI.
 
@@ -51,12 +52,6 @@ pip install --no-cache-dir -r requirements.txt
 streamlit run app.py
 ```
 
-## 🐳 Running with Docker
-```bash
-docker build -t ai-news-extractor .
-docker run -p 8501:8501 ai-news-extractor
-```
-
 ## 🔧 Configuration
 Modify `config.py` to adjust API keys, model settings, and other parameters.
 
@@ -67,13 +62,10 @@ Modify `config.py` to adjust API keys, model settings, and other parameters.
 
 ---
 
-### ✨ Contributing
-Feel free to fork this repository and submit pull requests!
+## Group Members & Contributions
 
-### 📜 License
-This project is licensed under the MIT License.
-
-### 📬 Contact
-For questions or feedback, reach out via GitHub Issues.
+- **Vittorio** Agents creation
+- **Oliver** Agents creation 
+- **Daniel** Agents and structure 
 
 🚀 Happy Coding!
