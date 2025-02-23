@@ -16,6 +16,7 @@ AI News Extractor is a Python-based project that utilizes **CrewAI** to extract,
 ASSIGNMENT_3_AI_NEWS_EXTRACTOR/
 │── agents/
 │   ├── news_extractor_agent.py
+│   ├── quality_classification_agent.py
 │   ├── sentiment_agent.py
 │   ├── summarizer_agent.py
 │
@@ -23,8 +24,7 @@ ASSIGNMENT_3_AI_NEWS_EXTRACTOR/
 │   ├── crew_workflow.py
 │
 │── app.py
-│── config.py
-│── Dockerfile
+│── config.py (not uploaded)
 │── README.md
 │── requirements.txt
 ```
