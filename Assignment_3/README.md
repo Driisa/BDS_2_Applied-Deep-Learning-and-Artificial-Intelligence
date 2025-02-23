@@ -1,4 +1,4 @@
-# AI News Extractor
+# Portfolio Assignment 3 - AI News Extractor
 
 ## 📌 Overview
 AI News Extractor is a Python-based project that utilizes **CrewAI** to extract, analyze, and summarize news articles. It employs multiple AI agents to perform tasks such as data extraction, sentiment analysis, and summarization.
