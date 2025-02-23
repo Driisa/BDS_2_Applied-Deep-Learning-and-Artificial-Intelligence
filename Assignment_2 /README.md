@@ -128,7 +128,6 @@ def load_classification_pipeline():
 - **Vittorio, Oliver, Daniel** - Multi-Class Classification Model Development
 - **Daniel** - Deployment & Documentation
 - **Vittorio** - Streamlit app
-- **Daniel** - Technical Explainer Video
 
 ---
 
