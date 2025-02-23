@@ -20,7 +20,7 @@ This repository contains assignments covering deep learning topics like neural n
 
 ### 3️⃣ **Portfolio Assignment 3 - AI News Extractor**
 **Deadline:** 24th Feb
-**Objective:** AI-driven news extraction, sentiment analysis, and summarization using CrewAI.
+- **Objective:** AI-driven news extraction, sentiment analysis, and summarization using CrewAI.
 - **Features:** Fetches news, analyzes sentiment, ensures quality, provides summaries.
 - **Run Instructions:** Clone repo, install dependencies, start Streamlit app.
 
